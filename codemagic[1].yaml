@@ -1,0 +1,12 @@
+workflows:
+  android-workflow:
+    name: Dastak Mobile APK Build
+    environment:
+      flutter: stable
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Build release APK
+        script: flutter build apk --release -t lib/main.dart
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
